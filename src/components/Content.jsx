@@ -13,6 +13,7 @@ export default function Content({ content, index }) {
         flex flex-col gap-2 cursor-pointer 
         transition-transform duration-200 ease-in-out
         hover:-translate-y-1 hover:shadow-lg
+        w-[250px] h-[260px]   /* 카드 크기 고정 */
       "
     >
       {/* 이미지 박스 */}
@@ -34,8 +35,12 @@ export default function Content({ content, index }) {
       </div>
 
       {/* 텍스트 */}
-      <div className="text-[16px] font-semibold">{content.title}</div>
-      <p className="text-[12px] text-gray-400">{content.subtitle}</p>
+      <div className="text-[16px] font-semibold line-clamp-1">
+        {content.title}
+      </div>
+      <p className="text-[12px] text-gray-400 line-clamp-2">
+        {content.subtitle}
+      </p>
     </div>
   );
 }
